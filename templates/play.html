@@ -1,0 +1,38 @@
+<!-- templates/play.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Game - Play</title>
+    <style>
+        body {
+            background-color: skyblue; /* Fond bleu ciel */
+            
+            
+        }
+        h1, p , form{
+            text-align: center; /* Centrer le texte horizontalement */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Coin Game - Play</h1>
+    <form action="{{ url_for('result') }}" method="post">
+        <label for="choice">Choose: </label>
+        <select name="choice">
+            <option value="pile">Pile</option>
+            <option value="face">Face</option>
+        </select>
+        <br>
+        <label for="bet_amount">Bet Amount (satoshi): </label>
+        <select name="bet_amount">
+            <option value=1>1</option>
+            <option value=10>10</option>
+        </select>
+        <br>
+        <button type="submit">Gamble</button>
+    </form>
+</body>
+</html>
